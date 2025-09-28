@@ -1,0 +1,160 @@
+header {
+  --mega-columns: 4;
+
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  li,
+  p {
+    margin: 0;
+  }
+
+  .btn {
+    display: inline-block;
+    margin-block: 1em 1em;
+  }
+
+  .menu,
+  .mega-menu {
+    display: none;
+    padding: var(--spacing-xl);
+    min-width: 160px;
+    position: absolute;
+    top: var(--header-height);
+    background-color: light-dark(var(--color-gray-75), var(--color-gray-900));
+    z-index: 1000;
+
+    .default-content > :first-child {
+      margin-top: 0;
+    }
+
+    .default-content > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .mega-menu {
+    right: 0;
+    left: 0;
+
+    > .fragment-content {
+      display: grid;
+      grid-template-columns: repeat(var(--mega-columns), 1fr);
+      max-width: var(--grid-container-width);
+      margin: 0 auto;
+    }
+  }
+
+  .header-content {
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--spacing-xl);
+    max-width: var(--grid-container-width);
+    margin: 0 auto;
+    flex: 1 0 auto;
+  }
+
+  .brand-section {
+    display: block;
+
+    p,
+    a {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-m);
+      font-size: var(--heading-font-size-m);
+      font-weight: 700;
+      text-decoration: none;
+      margin: 0;
+
+      svg,
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  .main-nav-section {
+    display: none;
+
+    > .default-content > ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: var(--spacing-xl);
+    }
+
+    li.is-open .mega-menu {
+      display: block;
+    }
+
+    li.is-open:has(.menu) {
+      position: relative;
+    }
+  }
+
+  .actions-section {
+    display: none;
+    height: 100%;
+
+    > .default-content {
+      height: 100%;
+      display: flex;
+      gap: var(--spacing-m);
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      border: none;
+      padding: 0;
+      background-color: transparent;
+      height: 100%;
+
+      .icon {
+        width: 24px;
+        height: 24px;
+      }
+
+      .text {
+        display: none;
+      }
+    }
+
+    .menu {
+      right: 0;
+    }
+
+    .action-wrapper {
+      &.is-open {
+        position: relative;
+
+        .menu {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media (width >= 600px) {
+  header {
+    .main-nav-section {
+      display: block;
+    }
+
+    .actions-section {
+      display: block;
+    }
+  }
+}

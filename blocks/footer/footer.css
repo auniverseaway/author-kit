@@ -1,0 +1,33 @@
+footer {
+  margin: 32px 0;
+
+  .footer-content {
+    max-width: var(--grid-container-width);
+    margin: 0 auto;
+  }
+}
+
+.section-legal ul,
+.section-copyright {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+}
+
+.section-copyright p {
+  margin: 0;
+}
+
+@media (width >= 900px) {
+  footer {
+    margin: 0;
+  }
+
+  .section-legal ul,
+  .section-copyright {
+    display: flex;
+    justify-content: end;
+    gap: var(--spacing-xl);
+  }
+}

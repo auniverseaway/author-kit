@@ -1,0 +1,8 @@
+name = "website"
+main = "index.js"
+compatibility_date = "2025-02-14"
+
+vars = { AEM_HOSTNAME = "main--adv-boilerplate--aemsites.aem.live" }
+
+[env.dev]
+vars = { ENVIRONMENT = "dev", AEM_HOSTNAME = "main--adv-boilerplate--aemsites.aem.live" }

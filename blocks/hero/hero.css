@@ -1,0 +1,64 @@
+.hero {
+  position: relative;
+  color: #fff;
+
+  --min-height: 360px;
+
+  &.small {
+    --min-height: 180px;
+  }
+
+  &.large {
+    --min-height: 720px;
+  }
+
+  &.full {
+    --min-height: calc(100vh - var(--header-height));
+  }
+
+  &.light {
+    color: var(--color-dark);
+  }
+
+  &.dark {
+    color: var(--color-light);
+  }
+
+  .hero-background {
+    picture {
+      position: absolute;
+      inset: 0;
+    }
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .hero-foreground {
+    max-width: var(--grid-container-width);
+    min-height: var(--min-height);
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    div > *:first-child {
+      margin-top: 0;
+    }
+
+    div > *:last-child {
+      margin-bottom: 0;
+    }
+
+    .hero-detail {
+      margin: 0;
+    }
+
+    .hero-heading {
+      margin: 0;
+    }
+  }
+}
